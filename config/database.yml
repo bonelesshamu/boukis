@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: boukis_production
-  username: boukis
-  password: <%= ENV['BOUKIS_DATABASE_PASSWORD'] %>
+  username: root
+  password: 'password'
+#  password: <%= ENV['BOUKIS_DATABASE_PASSWORD'] %>
