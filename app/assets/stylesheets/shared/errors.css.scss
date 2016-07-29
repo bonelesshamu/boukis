@@ -9,5 +9,6 @@ div#error{
   border: solid 4px $dark-gray;
   background-color: $very_light_gray;
   text-align: center;
+  font-size: $normal;
   p.url {font-family: monospace; }
 }
