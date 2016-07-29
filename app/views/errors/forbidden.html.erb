@@ -1,0 +1,13 @@
+<div id="error">
+  <h1>403 Internal Server Error</h1>
+  <p> 
+    <%=
+       case @exception
+       when ApplicationController::IpAddressRejected
+         "your IP address (#{request.ip}) cannot access this page."
+       else
+         "you don't have the authority to access this page."
+       end
+    %>
+  </p>
+</div>

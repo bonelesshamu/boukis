@@ -18,6 +18,7 @@ div#wrapper {
 
 header {
   padding: $moderate;
+  font-size: $normal;
   background-color: $dark_magenta;
   color: $very_light_gray;
   span.logo-mark {
@@ -28,6 +29,7 @@ header {
 footer {
   bottom: 0;
   position: absolute;
+  font-size: $tiny;
   width: 100%;
   background-color: $dark_gray;
   color: $very_light_gray;

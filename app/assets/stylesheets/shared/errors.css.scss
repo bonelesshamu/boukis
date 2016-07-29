@@ -1,0 +1,13 @@
+@import 'colors';
+@import 'dimensions';
+
+div#error{
+  width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  border: solid 4px $dark-gray;
+  background-color: $very_light_gray;
+  text-align: center;
+  p.url {font-family: monospace; }
+}
