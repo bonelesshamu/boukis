@@ -43,8 +43,8 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
 
-  #config.before(:suite) do 
-  #  FactoryGirl.reload
+  #config.before do 
+  #  FactoryGirl.find_definitions
   #end
 
 end
