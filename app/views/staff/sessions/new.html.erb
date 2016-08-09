@@ -1,14 +1,14 @@
-<% @title='login' %>
+<% @title='Staff login' %>
 <div id="login-form">
-  <h1><%= @title %></h1>
+  <h2><%= @title %></h2>
   <%= form_for @form, url: :staff_session do |f| %>
   <div>
     <%= f.label :email, 'メールアドレス' %>
-    <%= f.text_field :email %>
+    <%= f.email_field :email %>
   </div>
   <div>
     <%= f.label :password, 'パスワード' %>
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
   </div>
   <div>
     <%= f.submit 'ログイン' %>

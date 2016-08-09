@@ -1,0 +1,43 @@
+@import 'colors';
+@import 'dimensions';
+
+div#wrapper {
+  div#container {
+    div#login-form {
+      width: $very_wide*8;
+      margin: $moderate auto;
+      padding: $normal;
+      border-radius: $wide;
+      border: solid 10px $dark_cyan;
+      background-color: $very_light_gray;
+    }
+
+    h2 {
+      padding: 0;
+      background-color: transparent;
+      color: $very_dark_cyan;
+      font-size: $large;
+      font-weight: bold;
+    }
+
+    form {
+      div {
+        padding: $narrow;
+	label {
+	  font-size: $normal;
+	  display: block;
+	  #padding: $narrow 0;
+	}
+	input[type='email'], input[type='password'] {
+	  font-size: $normal;
+	  padding: 0 $wide*2;
+	  width: $very_wide * 5;
+	}
+	input[type='submit'] {
+	  font-size: $normal;
+	  padding: 10px $wide*2;
+	}
+      }
+    }
+  }
+}
