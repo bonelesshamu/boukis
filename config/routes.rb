@@ -1,41 +1,52 @@
 Rails.application.routes.draw do
-  namespace :staff do
-    root 'top#index'
-    get 'login' => 'sessions#new', as: :login
-    post 'session' => 'sessions#create', as: :session
-    delete 'session' => 'sessions#destroy'
-  end
+  config = Rails.application.config.boukis
+  
+  constraints host: config[:staff][:host] do
+    namespace :staff, path: config[:staff][:path] do
+      root 'top#index'
+      get 'login' => 'sessions#new', as: :login
+      resource :session, only: [ :create, :destroy ]
+      resource :account, except: [ :new, :create, :destroy ]
+    end
+  end 
 
-  namespace :admin do
-    root 'top#index'
-    get 'login' => 'sessions#new', as: :login
-    post 'session' => 'sessions#create', as: :session
-    delete 'session' => 'sessions#destroy'
-  end
+  constraints host: config[:admin][:host] do
+    namespace :admin, path: config[:admin][:path] do
+      root 'top#index'
+      get 'login' => 'sessions#new', as: :login
+      resource :session, only: [ :create, :destroy ]
+      resources :staff_members
+    end
+  end 
 
-  namespace :customer do
-    root 'top#index'
+  constraints host: config[:customer][:host] do
+    namespace :customer, path: config[:customer][:path] do
+      root 'top#index'
+    end
   end
-
+  
   root 'errors#routing_error'
   get '*anything' => 'errors#routing_error'
-
-  # The priority is based upon order of creation: first created -> highest priority.
+  
+  # The priority is based upon order of creation: first created -> highest prio
   # See how all your routes lay out with "rake routes".
-
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
+  
+  # Example of named route that can be invoked with purchase_url(id: product.id
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
+  
+  # Example resource route (maps HTTP verbs to controller actions automatically
   #   resources :products
-
+  
   # Example resource route with options:
+
+  
+  
   #   resources :products do
   #     member do
   #       get 'short'

@@ -38,4 +38,10 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  config.boukis = {
+    staff: { host: 'boukis.example.com', path: '' },
+    admin: { host: 'boukis.example.com', path: 'admin' },
+    customer: { host: 'example.com', path: 'mypage' }
+  }
 end
